@@ -38,7 +38,7 @@ function extension {
 }
 
 REV=""
-OUT="-f draft.txt --text"
+OUT="draft.txt"
 MARKUP=""
 RM=rm
 Q="-q"
@@ -47,10 +47,10 @@ while getopts "vdht:x:THMXNRCV1" o; do
     T) ;;
     M) MARKUP="1";;
     1) REV="1"; TRANS=/usr/share/pandoc2rfc/plain.xsl;;
-    R) OUT="-f draft.txt --raw";;
-    H) OUT="-f draft.html --html";;
-    X) OUT="-f draft.xml --exp";;
-    N) OUT="-f draft.nroff --nroff";;
+    R) echo "temporary disabled." && exit 0 ;; #OUT="-f draft.txt --raw";;
+    H) echo "temporary disabled." && exit 0 ;; #OUT="-f draft.html --html";;
+    X) echo "temporary disabled." && exit 0 ;; #OUT="-f draft.xml --exp";;
+    N) echo "temporary disabled." && exit 0 ;; #OUT="-f draft.nroff --nroff";;
     C) [[ -n "$VERBOSE" ]] && echo rm -f draft.{txt,html,xml,nroff} >&2
        rm -f draft.{txt,html,xml,nroff} && exit 0;;
     h) usage && exit 0;;
